@@ -266,7 +266,11 @@ def extract_data(
             detail_soup = get_parsed_page(detail_base_url + link)
 
             # Extracts data from the detail page
-            detail_data = extract_detail_page_data(detail_soup) if detail_soup else {}
+            detail_data = (
+                extract_detail_page_data(detail_soup)
+                if detail_soup
+                else {}
+            )
 
             # Joins the data from both pages
             extracted_data.append(
